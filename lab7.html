@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arrays</title>  
+        <script language="javascript" type="text/javascript">
+            function outputArray(theArray)
+            {
+              for(theArray in placesToVisit)
+              {
+            document.write("Iteration: " + theArray);
+            document.write("<br/>" + placesToVisit[theArray] + "<br/>");
+              }  
+            }
+        </script>
+    </head>
+    <body>
+    <script language="javascript" type="text/javascript">
+     var placesToVisit = ["Antigua", "St. Vincents", "Barbados", "Sweden", "Jamaica"]; 
+        placesToVisit.push("Norway");
+        alert("hello array");
+        alert(placesToVisit[1]);
+        
+        document.write("</br>" + placesToVisit.length + "<br/>");
+        
+        for(var i = 0; i < placesToVisit.length; i++);
+        {
+            document.write(placesToVisit[i]);
+            document.write("<br/>");
+                
+        } 
+        
+        //placesToVisit.splice(0, 2); //Remove 1st 2 elements
+        placesToVisit.sort();
+        
+        outputArray();
+        
+             
+    </script>
+        
+        
+    </body>
+</html>

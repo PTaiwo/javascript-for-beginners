@@ -5,19 +5,33 @@
     </head>
     <body>
         <script language="javascript" type="text/javascript">
-            var interestRate = parseFloat(prompt("Enter an interest rate",""));
+            var interestRate = (parseFloat(prompt("Enter an interest rate(0.0x)",""))/12).toFixed(5);
             var totalMoney = 1000;
             var interestAccrued = totalMoney  * interestRate;
             var monthlyTotal = totalMoney + (interestRate * totalMoney);
-            document.write(interestRate + "<br/>");
+            
+         /*   document.write(interestRate + "<br/>");
             document.write(totalMoney + "<br/>");
             document.write(interestAccrued + "<br/>");
             document.write(monthlyTotal + "<br/>");
+            */
             
             document.write("<table border=2>");
-            document.write("<tr><td>Month</td><td>Interest Earned</td><td>Total</td></tr><br/>");
-            document.write("</table>");
+            document.write("<tr><td><b>Month</b></td><td><b>Interest Earned</b></td><td><b>Total</b></td></tr><br/>");
+            
+            for(var i=1; i < 13; i++)
+            {
+                                
+                document.write("<tr><td>" + i + "</td><td>" + "$" + interestAccrued + "</td><td>" + "$" + monthlyTotal +"</td></tr><br/>");
                 
+                var totalMoney = monthlyTotal;
+                var interestAccrued = (totalMoney  * interestRate).toFixed(2);
+                var monthlyTotal = totalMoney + (interestRate * totalMoney);
+                
+            }
+                            
+            document.write("</table>");
+                        
         </script>
     </body>
 
